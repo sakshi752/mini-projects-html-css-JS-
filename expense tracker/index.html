@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <!-- balance info -->
+        <div class="balanceInfo">
+            <!-- current balance -->
+            <div class="currentBalance">
+                <h1>Your Balance</h1>
+                <p id="balance"></p>
+            </div>
+            <!-- current income and expense cards -->
+            <div class="incomeExpense">
+                <div class="income">
+                    <h3>Income</h3>
+                    <p id="income"></p>
+                </div>
+                <div class="expense">
+                    <h3>Expense</h3>
+                    <p id="expense"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- transaction history -->
+        <div class="history">
+            <h1>History</h1>
+            <ul id="transactionList">
+                <!-- <li class="transactionCard expense">
+                    <div>
+                        <p>Dinner date</p>
+                        <p>Expense</p>
+                    </div>
+                    <div>
+                        <p>$100</p>
+                        <button onclick="">delete</button>
+                    </div>
+                </li> -->
+            </ul>
+            <button class="btn" id="clearBtn">clear transactions</button>
+        </div>
+        <!-- form -->
+        <div class="transactionFormContainer">
+            <h1>Add New Transaction</h1>
+            <form id="transactionForm">
+                <div class="formGroup">
+                    <label for="amt">Enter Amount</label>
+                    <input type="number" id="amt" name="amount">
+                </div>
+                <div class="formGroup">
+                    <label for="desc">Enter Description</label>
+                    <input type="text" id="desc" name="description">
+                </div>
+                <div class="formGroup">
+                    <label>Type:</label>
+                    <label>
+                        <input type="radio" name="type" value="expense"> Expense
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="income"> Income
+                    </label>
+                </div>
+                <div class="formGroup">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

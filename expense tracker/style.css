@@ -1,0 +1,210 @@
+/* Existing CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #212121;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.mainContainer {
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    background: white;
+    border-radius: 2px;
+    padding: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mainContainer .balanceInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mainContainer .balanceInfo .currentBalance {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mainContainer .balanceInfo .currentBalance h1,
+.mainContainer .history h1,
+.mainContainer .transactionFormContainer h1 {
+    font-size: 1.5rem;
+}
+
+.mainContainer .balanceInfo .currentBalance p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.mainContainer .balanceInfo .incomeExpense {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.mainContainer .balanceInfo .incomeExpense div {
+    background: rgb(203, 199, 199);
+    width: 50%;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 5px;
+}
+
+.mainContainer .balanceInfo .incomeExpense div h3 {
+    font-size: 1.3rem;
+}
+
+.mainContainer .balanceInfo .incomeExpense .income p {
+    color: rgb(10, 146, 10);
+    font-size: 1.3rem;
+}
+
+.mainContainer .balanceInfo .incomeExpense .expense p {
+    color: red;
+    font-size: 1.3rem;
+}
+
+.mainContainer .transactionFormContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mainContainer .transactionFormContainer .formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .history {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mainContainer .history .btn{
+    width: 20%;
+    margin: auto;
+    padding: 4px;
+    background: red;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+
+.mainContainer .history ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .history ul p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer .history ul .transactionCard {
+    background: #f4f4f4;
+    padding: 10px;
+    border-left: 5px solid;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainContainer .history ul .transactionCard div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mainContainer .history ul .transactionCard div p {
+    font-size: large;
+    font-weight: 600;
+}
+
+.mainContainer .history ul .transactionCard div span {
+    font-size: medium;
+    background: #272727;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.mainContainer .history ul .transactionCard button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mainContainer .history ul li.expense {
+    border-color: red;
+}
+
+.mainContainer .history ul li.income {
+    border-color: green;
+}
+
+/* New CSS for input fields and submit button */
+.mainContainer .transactionFormContainer .formGroup label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.mainContainer .transactionFormContainer .formGroup input[type="number"],
+.mainContainer .transactionFormContainer .formGroup input[type="text"],
+.mainContainer .transactionFormContainer .formGroup input[type="radio"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.mainContainer .transactionFormContainer .formGroup input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.mainContainer .transactionFormContainer .formGroup input[type="radio"] + label {
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.mainContainer .transactionFormContainer .formGroup button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mainContainer .transactionFormContainer .formGroup button:hover {
+    background-color: #45a049;
+}
