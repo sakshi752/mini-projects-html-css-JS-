@@ -1,36 +1,48 @@
-const todoFrom =document.querySelector('.todo-form');
+const todoForm = document.querySelector('.todo-form');
 
-const loadTodos=()=>{
+const loadTodos = () => {
     const todos=JSON.parse(localStorage.getItem('todos')) || [];
-    todos.forEach((todos)=>{})
-    addTodo(todos);
 
-    // if (todos.) {
-        
-    // }
+    todos.forEach((todo)=>{
+        addTodo(todo.todo)
+    })
 }
 
-const addTodo=(todo,index)=>{
-    const todos=JSON.parse(localStorage.getItem('todos')) || [];
+const addTodo = (todo) => {
+    const todoContainer = document.createElement('li')
+    todoContainer.classList.add('todo');
+    todoContainer.innerHTML = `
+        <div>${todo}</div>
+        <div>
+            <button>Delete</button>
+            <button>Update</button>
+        </div>
+ `
+ const listitems=document.getElementById('list-items');
+ listitems.appendChild(todoContainer)
 }
-const deleteTodo=(index)=>{
+const deleteTodo = () => {
 
 }
 
-const updateTodo=(index)=>{
+const updateTodo = (index) => {
 
 }
 
-todoFrom.addEventListener("submit",(event)=>{
+todoForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const todo=document.querySelector(".todo-input").value.trim();
-    if(todo){
+    const todoInput = document.querySelector(".todo-input");
+    const todo = todoInput.value.trim();
+    if (todo) {
         addTodo(todo);
-        todo.value=''
-    }
-    else{
-        alert('enter proper details')
+        const todoObj = { todo };
+        const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        todos.push(todoObj);
+        localStorage.setItem('todos', JSON.stringify(todos));
+        todoInput.value = '';
+    } else {
+        alert('Enter proper details');
     }
 });
 
-window.addEventListener('load',loadTodos);
+window.addEventListener('load', loadTodos);

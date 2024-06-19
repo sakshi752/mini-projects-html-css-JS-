@@ -52,20 +52,17 @@ const createTransactionCard = (amt, desc, type) => {
 
 const getCurrentDateTime = () => {
     const now = new Date();
-    const options = {
-        year: 'numeric', month: 'short', day: 'numeric',
-        hour: 'numeric', minute: 'numeric', second: 'numeric'
-    };
-    return now.toLocaleDateString('en-US', options);
+    return now.toLocaleDateString('en-US');
 }
 
 const loadTransactions = () => {
     const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
-    const transactionList = document.getElementById('transactionList');
-    transactionList.innerHTML = ''; // Clear existing content
+   
 
     if (transactions.length === 0) {
+        const transactionList = document.getElementById('transactionList');
+        transactionList.innerHTML = ''; // Clear existing content
         msg.textContent = 'No transactions present';
         transactionList.appendChild(msg);
     } else {
