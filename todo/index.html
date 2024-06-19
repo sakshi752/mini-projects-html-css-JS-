@@ -3,29 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="todo-header">
-            <h2>Todo List</h2>
+    <h1>todo list</h1>
+    <form class="todoForm">
+        <div>
+            <input type="text" class="todoValue">
+            <button class="btn">Add todo</button>
         </div>
-        
-        <form class="todo-form">
-            <input type="text" placeholder="Add your task" class="todo-input">
-            <button>Add todo</button>
-        </form>
+    </form>
+    <div class="todoList">
 
-        <ul class="list-items" id="list-items">
-            <!-- <li class="todo">
-                <div>Todo title</div>
-                <div>
-                    <button>Delete</button>
-                    <button>Update</button>
-                </div>
-            </li> -->
-        </ul>
     </div>
     <script src="script.js"></script>
 </body>
