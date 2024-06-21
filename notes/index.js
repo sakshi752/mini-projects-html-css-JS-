@@ -9,9 +9,11 @@ const getNotes = () => {
     return JSON.parse(localStorage.getItem('notes')) || [];
 }
 
+
 const updateStorage = (notes) => {
     localStorage.setItem('notes', JSON.stringify(notes));
 }
+
 
 const loadNotes = () => {
     const notes = getNotes();
@@ -91,9 +93,9 @@ const updateNote = (newTitle, newDesc) => {
             noteDescElement.textContent = newDesc;
         }
     });
-    noteToEdit = null;
+    noteToEdit = "";
     editMode = false;
-     addButton.style.display = 'block'; // Hide the add button
+    addButton.style.display = 'block'; // Hide the add button
     editButton.style.display='none'
 }
 
