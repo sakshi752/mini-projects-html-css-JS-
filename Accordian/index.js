@@ -26,9 +26,8 @@ const accordionData = [
 ];
 
 let currIndex = null; 
-const handleAnsToggle=(accItem,index) => {
-    const answerElement = accItem.querySelector('.answer');
-
+const accordion = document.getElementById('accordion');
+const handleAnsToggle=(answerElement,index) => {
     if (currIndex === index) {
         answerElement.style.display = 'none';
         currIndex = null;
@@ -43,14 +42,10 @@ const handleAnsToggle=(accItem,index) => {
 }
 
 const loadAccordian = () => {
-    const accordion = document.getElementById('accordion');
-
-
 
     accordionData.forEach(({ answer, question }, index) => {
         const accItem = document.createElement('div');
         accItem.classList.add('acc-item');
-
         accItem.innerHTML = `
             <p class="question">${question}</p>
             <p class="answer">${answer}</p>
@@ -58,7 +53,8 @@ const loadAccordian = () => {
 
         // Toggle answer visibility on question click
         accItem.querySelector('.question').addEventListener('click', ()=>{
-            handleAnsToggle(accItem,index)
+            const answerElement = accItem.querySelector('.answer');
+            handleAnsToggle(answerElement,index)
         });
 
         accordion.appendChild(accItem);
