@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            text-align: center;
+            transition: background-color ease-in-out 0.3s;
+        }
+
+        .change-bg-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .change-bg-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="change-bg-btn" id="change-bg-btn">Change bg</button>
+    </div>
+    <script>
+        let changeBtn=document.querySelector('#change-bg-btn')
+
+        const getRandomHexNum=()=>{
+            return Math.floor(Math.random()*16).toString(16);
+        }
+        const getHexString=()=>{
+            let hexStr='#'
+            for (let i = 0; i < 6; i++) {
+                hexStr+=getRandomHexNum();
+            }
+            return hexStr;
+        }
+        
+        const handleBgChange=()=>{
+            const hexColor=getHexString();
+            document.querySelector('.container').style.background=hexColor
+        }
+        changeBtn.addEventListener('click',handleBgChange);
+    </script>
+</body>
+</html>

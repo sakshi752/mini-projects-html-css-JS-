@@ -1,4 +1,4 @@
-// write a js program to compare two objects to determine if the first one contains the same properties as the second one(which may also have additional properties)
+//1. write a js program to compare two objects to determine if the first one contains the same properties as the second one(which may also have additional properties)
 
 const obj1 = { a: 1, b: 2 };
 const obj2 = { a: 1, b: 2, c: 3 };
@@ -35,3 +35,17 @@ const getHexString=()=>{
 }
 
 console.log(getHexString());
+
+// write a js function that returns true if the provided predicate function returns true for all elements in collection, false otherwise
+
+const isEveryVal=(arr,fn)=>{
+    for (let i = 0; i < arr.length; i++) {
+        if (!fn(arr[i])) {
+            return false
+        }
+    }
+    return true;
+}
+
+console.log(isEveryVal([1,2,3,5],(x)=>x>0));
+console.log(isEveryVal([1,2,3,5],(x)=>x%2===0));
